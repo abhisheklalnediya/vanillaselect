@@ -2,18 +2,7 @@ const container = document.getElementById('select');
 var input;
 var dropdown;
 
-const users = [{
-  id: 1,
-  name: 'Michael Scott',
-  title: 'Regional Manager'
-},
-{
-  id: 2,
-  name: 'Dwight Schrute',
-  title: 'AARM'
-}]
-
-const searchBox = () => {
+function searchBox() {
   input = document.createElement('input');
   input.classList = 'searchBox';
   input.setAttribute('placeholder', 'Select Country')
@@ -23,7 +12,7 @@ const searchBox = () => {
   return input;
 };
 
-const select = () => {
+function select() {
   const select = document.createElement('div');
   select.appendChild(searchBox());
   select.appendChild(showDropdown());
@@ -72,7 +61,6 @@ function onSearch (e) {
 }
 
 function toggleDropdown (show) {
-  console.log(show)
   if(show===true) { 
     dropdown.classList.remove('hidden')
   } else {
