@@ -9,14 +9,7 @@
 
   #select, #select > div {
     display: inline-block;
-}
-
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    width: 100vw;
+    position: relative;
 }
 
 .searchBox {
@@ -30,18 +23,24 @@
     padding: 5px 15px;
 }
 
-.searchBox:after {
+#select::after {
     content: "▼";
     padding: 12px 8px;
-    position: relative;
-    right: 29px;
+    position: absolute;
+    right: 0;
     top: 0;
     z-index: 1;
     text-align: center;
-    width: 10%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
     pointer-events: none;
     color: #565656;
+    transition: transform .2s;
+}
+
+#select.open::after {
+    transform: rotate(180deg);
+    transition: transform .2s;
 }
 
 .searchBox:hover {
@@ -63,6 +62,7 @@
     border:1px solid #666;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     padding: 0;
+    transition: height .2s;
 }
 
 #dropdown > div {

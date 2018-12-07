@@ -67,9 +67,9 @@ function toggleDropdown (show) {
     dropdown.classList.toggle('hidden');
   }
   if (!dropdown.classList.contains('hidden')){
-    container.classList.add('nocaret');
+    container.classList.add('open');
   } else {
-    container.classList.remove('nocaret');
+    container.classList.remove('open');
   }
 };
 
